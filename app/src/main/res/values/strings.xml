@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Play&amp;Dance</string>
+    <string name="favorites">Favorites</string>
+    <string name="rock">Rock</string>
+    <string name="electronic">Electronic</string>
+    <string name="pop">Pop</string>
+</resources>

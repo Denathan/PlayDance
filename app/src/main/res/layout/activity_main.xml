@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlackAlpha"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo" />
+
+        <LinearLayout
+            android:id="@+id/favorites"
+            style="@style/MainMenuBox"
+            android:layout_below="@id/logo">
+
+            <ImageView
+                style="@style/MainMenuBoxIcon"
+                android:src="@drawable/ic_favorites" />
+
+            <TextView
+                style="@style/MainMenuBoxText"
+                android:text="@string/favorites" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rock"
+            style="@style/MainMenuBox"
+            android:layout_below="@id/favorites">
+
+            <ImageView
+                style="@style/MainMenuBoxIcon"
+                android:src="@drawable/ic_rock" />
+
+            <TextView
+                style="@style/MainMenuBoxText"
+                android:text="@string/rock" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/electronic"
+            style="@style/MainMenuBox"
+            android:layout_below="@id/rock">
+
+            <ImageView
+                style="@style/MainMenuBoxIcon"
+                android:src="@drawable/ic_electronic" />
+
+            <TextView
+                style="@style/MainMenuBoxText"
+                android:text="@string/electronic"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pop"
+            style="@style/MainMenuBox"
+            android:layout_below="@id/electronic"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                style="@style/MainMenuBoxIcon"
+                android:src="@drawable/ic_pop" />
+
+            <TextView
+                style="@style/MainMenuBoxText"
+                android:text="@string/pop" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>
