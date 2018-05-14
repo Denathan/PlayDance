@@ -22,7 +22,9 @@
         <LinearLayout
             android:id="@+id/favorites"
             style="@style/MainMenuBox"
-            android:layout_below="@id/logo">
+            android:layout_below="@id/logo"
+            android:onClick="favoritesBtn"
+            android:clickable="true">
 
             <ImageView
                 style="@style/MainMenuBoxIcon"
@@ -36,7 +38,8 @@
         <LinearLayout
             android:id="@+id/rock"
             style="@style/MainMenuBox"
-            android:layout_below="@id/favorites">
+            android:layout_below="@id/favorites"
+            android:onClick="rockBtn">
 
             <ImageView
                 style="@style/MainMenuBoxIcon"
@@ -50,7 +53,8 @@
         <LinearLayout
             android:id="@+id/electronic"
             style="@style/MainMenuBox"
-            android:layout_below="@id/rock">
+            android:layout_below="@id/rock"
+            android:onClick="electronicBtn">
 
             <ImageView
                 style="@style/MainMenuBoxIcon"
@@ -65,7 +69,8 @@
             android:id="@+id/pop"
             style="@style/MainMenuBox"
             android:layout_below="@id/electronic"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="8dp"
+            android:onClick="popBtn">
 
             <ImageView
                 style="@style/MainMenuBoxIcon"

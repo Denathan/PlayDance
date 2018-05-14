@@ -8,4 +8,5 @@
     <color name="colorOvercast">#9099a2</color>
     <color name="colorBlackAlpha">#ce000000</color>
     <color name="colorWhiteAlpha">#1effffff</color>
+    <color name="colorStrongCyan">#4ABDAC</color>
 </resources>
