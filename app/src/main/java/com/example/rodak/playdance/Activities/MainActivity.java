@@ -1,12 +1,12 @@
-package com.example.rodak.playdance;
+package com.example.rodak.playdance.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.rodak.playdance.R;
 
 import static android.app.PendingIntent.getActivity;
 

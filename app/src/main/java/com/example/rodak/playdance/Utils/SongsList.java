@@ -1,10 +1,10 @@
-package com.example.rodak.playdance;
+package com.example.rodak.playdance.Utils;
 
-public class RockList {
+public class SongsList {
     private String title;
     private String artist;
 
-    public RockList(String songTitle, String artistName)
+    public SongsList(String songTitle, String artistName)
     {
         title = songTitle;
         artist = artistName;
