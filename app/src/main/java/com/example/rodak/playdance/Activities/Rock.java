@@ -1,7 +1,10 @@
 package com.example.rodak.playdance.Activities;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.ListView;
 
 import com.example.rodak.playdance.R;
@@ -16,6 +19,13 @@ public class Rock extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rock);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.tool_bar);
+        setSupportActionBar(myToolbar);
+        setTitle(this.getString(R.string.rock));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        myToolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.colorOvercast), PorterDuff.Mode.SRC_ATOP);
 
         ArrayList<SongsList> songsLists = new ArrayList<SongsList>();
         songsLists.add(new SongsList("Aerosmith", "Sweet Emotion"));
@@ -47,5 +57,13 @@ public class Rock extends AppCompatActivity {
         SongsListAdapter rockAdapter = new SongsListAdapter(this, songsLists);
         ListView listView = (ListView) findViewById(R.id.rock_list);
         listView.setAdapter(rockAdapter);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        Intent myIntent = new Intent(Rock.this, MainActivity.class);
+        Rock.this.startActivity(myIntent);
+        finish();
+        return true;
     }
 }

@@ -1,7 +1,10 @@
 package com.example.rodak.playdance.Activities;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.ListView;
 
 import com.example.rodak.playdance.R;
@@ -16,6 +19,13 @@ public class Electronic extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_electronic);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.tool_bar);
+        setSupportActionBar(myToolbar);
+        setTitle(this.getString(R.string.electronic));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        myToolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.colorOvercast), PorterDuff.Mode.SRC_ATOP);
 
         ArrayList<SongsList> electronicLists = new ArrayList<SongsList>();
         electronicLists.add(new SongsList("Push The Tempo", "Fatboy Slim"));
@@ -45,5 +55,13 @@ public class Electronic extends AppCompatActivity {
         SongsListAdapter electronicAdapter = new SongsListAdapter(this, electronicLists);
         ListView listView = (ListView) findViewById(R.id.electronic_list);
         listView.setAdapter(electronicAdapter);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        Intent myIntent = new Intent(Electronic.this, MainActivity.class);
+        Electronic.this.startActivity(myIntent);
+        finish();
+        return true;
     }
 }

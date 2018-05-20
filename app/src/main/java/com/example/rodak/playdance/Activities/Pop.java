@@ -1,7 +1,10 @@
 package com.example.rodak.playdance.Activities;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.ListView;
 
 import com.example.rodak.playdance.R;
@@ -16,6 +19,13 @@ public class Pop extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.tool_bar);
+        setSupportActionBar(myToolbar);
+        setTitle(this.getString(R.string.pop));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        myToolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.colorOvercast), PorterDuff.Mode.SRC_ATOP);
 
         ArrayList<SongsList> popLists = new ArrayList<SongsList>();
         popLists.add(new SongsList("The Twist", "Chubby Checker"));
@@ -52,5 +62,13 @@ public class Pop extends AppCompatActivity {
         SongsListAdapter rockAdapter = new SongsListAdapter(this, popLists);
         ListView listView = (ListView) findViewById(R.id.pop_list);
         listView.setAdapter(rockAdapter);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        Intent myIntent = new Intent(Pop.this, MainActivity.class);
+        Pop.this.startActivity(myIntent);
+        finish();
+        return true;
     }
 }
