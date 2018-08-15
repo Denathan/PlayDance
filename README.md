@@ -6,7 +6,7 @@
 
 **Project Description:** Create the structure of an app to play music for a user and build it out.
 
-**What I learnt:**
+**What I've learned:**
 -   Designing an app experience to achieve a certain goal.
 -   Creating new activities.
 -   Using explicit Intents to link between activities in app.
